@@ -85,21 +85,7 @@ Agent/
 ollama pull qwen3-embedding:4b
 ```
 
-### 2. 环境变量
-
-| 变量 | 说明 | 获取方式 |
-|---|---|---|
-| `AMAP_KEY` | 高德地图 **Web 服务** Key（天气查询） | [高德开放平台](https://lbs.amap.com/) |
-| `DEEPSEEK_API_KEY` | DeepSeek API Key（对话模型） | [DeepSeek 开放平台](https://platform.deepseek.com/) |
-
-PowerShell 中设置（当前终端有效）：
-
-```powershell
-$env:AMAP_KEY = "你的高德Key"
-$env:DEEPSEEK_API_KEY = "你的DeepSeekKey"
-```
-
-### 3. 启动后端
+### 2. 启动后端
 
 ```bash
 pip install -r requirements-api.txt
@@ -110,7 +96,7 @@ python -m uvicorn zsapi.app:app --host 0.0.0.0 --port 8010
 
 访问 `http://127.0.0.1:8010/api/health` 返回正常即启动成功。
 
-### 4. 启动前端
+### 3. 启动前端
 
 ```bash
 cd web
@@ -118,17 +104,6 @@ npm install
 npm run dev
 ```
 
-浏览器打开 `http://127.0.0.1:5173`。
-
-### 5. Docker 方式（仅后端）
-
-```bash
-docker build -t smart-sweep-agent:1.0 .
-docker run -d --name agent-api -p 8010:8010 \
-  -e AMAP_KEY=<你的高德Key> \
-  -e DEEPSEEK_API_KEY=<你的DeepSeekKey> \
-  smart-sweep-agent:1.0
-```
 
 > 容器内通过 `host.docker.internal:11434` 访问宿主机上的 Ollama，需确保 Ollama 已启动。前端不包含在镜像内，仍需本地 `npm run dev`。
 
@@ -156,9 +131,3 @@ docker run -d --name agent-api -p 8010:8010 \
 
 ---
 
-## 说明
-
-- 知识库文件放入 `data/` 目录（支持 `txt` / `pdf`），启动时自动分块入库；`md5.txt` 记录文件摘要，用于增量更新去重
-- `chroma_db/` 为向量库持久化目录，已随仓库提供；如需重建可删除后重新启动
-- 会话数据库 `data/app.db` 首次运行时自动创建，未纳入版本控制
-- 所有密钥均通过环境变量注入，**仓库内不含任何明文密钥**
