@@ -1,0 +1,121 @@
+/* ==========================================================================
+   智扫通 · 设计令牌
+   --------------------------------------------------------------------------
+   风格：方案 B「暖色杂志」Editorial Warmth
+   参考来源：
+     - 字体 https://fontshare.com （Clash Display / Zodiak / Satoshi / Synonym）
+     - 配色：奶油纸底 + 陶土橘主色 + 橄榄绿语义色（低饱和暖色系）
+   规则：组件只引用变量，不写死色值。
+   ========================================================================== */
+
+:root {
+  /* ---------- 纸面基底 ---------- */
+  --bg-void: #fdfbf7;        /* 页面主底 */
+  --bg-base: #f7f2e9;        /* 次级底（侧栏、检查器） */
+  --bg-elevated: #efe7d8;    /* 抬升/分隔 */
+
+  --surface-1: #ffffff;      /* 卡片 */
+  --surface-2: #f7f2e9;      /* 次级卡片 / hover */
+  --surface-3: #efe7d8;      /* 输入框 / 激活 */
+  --surface-code: #f3ede2;   /* 代码块底 */
+
+  --line-hairline: #e8dfd1;
+  --line-strong: #dbcfbc;
+  --line-glow: #c98a4b;
+
+  /* ---------- 主色：陶土橘 ---------- */
+  --accent-core: #b45309;
+  --accent-bright: #d97706;
+  --accent-deep: #7c3a06;
+  --accent-soft: #fdf3e3;
+  --accent-line: #f0d5ac;
+  /* 兼容旧变量名（深色科技风遗留引用） */
+  --accent-blue: #b45309;
+  --accent-cyan: #c2670f;
+  --brand-gradient: linear-gradient(140deg, #d97706 0%, #b45309 100%);
+
+  /* ---------- 语义色（暖色系，低饱和） ---------- */
+  --ok: #4d7c0f;
+  --ok-soft: #f2f7e8;
+  --ok-line: #d5e4bb;
+  --warn: #a16207;
+  --warn-soft: #fdf6e3;
+  --danger: #b4342a;
+  --danger-soft: #fdeeec;
+  --info: #2f6f9e;
+
+  /* ---------- 墨色文字 ---------- */
+  --text-primary: #26211b;
+  --text-secondary: #5f5648;
+  --text-tertiary: #94897a;
+  --text-faint: #bdb2a1;
+  --text-inverse: #fdfbf7;
+
+  /* ---------- 字体 ---------- */
+  --font-display: 'Clash Display', 'Satoshi', Georgia, 'PingFang SC', serif;
+  --font-serif: 'Zodiak', 'Noto Serif SC', 'STSong', 'SimSun', Georgia, serif;
+  --font-sans: 'Satoshi', 'Inter', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'Synonym', 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  /* ---------- 圆角（杂志风偏大） ---------- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-2xl: 28px;
+  --r-full: 9999px;
+
+  /* ---------- 阴影：暖灰，轻而柔 ---------- */
+  --shadow-sm: 0 1px 2px rgba(38, 33, 27, 0.05), 0 2px 8px rgba(38, 33, 27, 0.04);
+  --shadow-panel: 0 1px 2px rgba(38, 33, 27, 0.05), 0 6px 18px rgba(38, 33, 27, 0.05);
+  --shadow-float: 0 2px 6px rgba(38, 33, 27, 0.06), 0 16px 40px rgba(38, 33, 27, 0.1);
+  --shadow-accent: 0 3px 12px rgba(180, 83, 9, 0.24);
+  /* 浅色主题不使用发光，保留变量名兼容旧引用 */
+  --glow-accent: 0 0 0 rgba(0, 0, 0, 0);
+  --glow-strong: 0 0 0 rgba(0, 0, 0, 0);
+
+  /* ---------- 动效 ---------- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ---------- 遮罩（浅色主题的半透明压暗） ---------- */
+  --scrim-60: rgba(38, 33, 27, 0.45);
+  --scrim-70: rgba(38, 33, 27, 0.55);
+
+  /* ---------- 主色透明度色阶（组件批量引用） ---------- */
+  --a-00: rgba(180, 83, 9, 0);
+  --a-03: rgba(180, 83, 9, 0.03);
+  --a-05: rgba(180, 83, 9, 0.05);
+  --a-06: rgba(180, 83, 9, 0.06);
+  --a-07: rgba(180, 83, 9, 0.07);
+  --a-08: rgba(180, 83, 9, 0.08);
+  --a-10: rgba(180, 83, 9, 0.1);
+  --a-12: rgba(180, 83, 9, 0.12);
+  --a-14: rgba(180, 83, 9, 0.14);
+  --a-15: rgba(180, 83, 9, 0.15);
+  --a-16: rgba(180, 83, 9, 0.16);
+  --a-18: rgba(180, 83, 9, 0.18);
+  --a-20: rgba(180, 83, 9, 0.2);
+  --a-25: rgba(180, 83, 9, 0.25);
+  --a-28: rgba(180, 83, 9, 0.28);
+  --a-30: rgba(180, 83, 9, 0.3);
+  --a-35: rgba(180, 83, 9, 0.35);
+  --a-40: rgba(180, 83, 9, 0.4);
+  --a-45: rgba(180, 83, 9, 0.45);
+  --a-50: rgba(180, 83, 9, 0.5);
+  --a-55: rgba(180, 83, 9, 0.55);
+  --a-60: rgba(180, 83, 9, 0.6);
+
+  /* ---------- 危险/成功/警告透明度色阶 ---------- */
+  --d-08: rgba(180, 52, 42, 0.08);
+  --d-12: rgba(180, 52, 42, 0.12);
+  --d-15: rgba(180, 52, 42, 0.15);
+  --d-25: rgba(180, 52, 42, 0.25);
+  --d-30: rgba(180, 52, 42, 0.3);
+  --d-35: rgba(180, 52, 42, 0.35);
+  --g-08: rgba(77, 124, 15, 0.08);
+  --g-10: rgba(77, 124, 15, 0.1);
+  --g-25: rgba(77, 124, 15, 0.25);
+  --w-08: rgba(161, 98, 7, 0.08);
+  --w-25: rgba(161, 98, 7, 0.25);
+}

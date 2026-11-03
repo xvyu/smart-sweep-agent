@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+  <!-- 智扫通 · 图标 sprite
+       替换 Vite 脚手架遗留的 Bluesky 示例图标。
+       叠印色：#b45309 × #26211b 的 multiply = #1b0b01 -->
+  <defs>
+    <clipPath id="bm-overlap">
+      <circle cx="9.2" cy="12" r="7.1"/>
+    </clipPath>
+  </defs>
+
+  <!-- 彩色标准版 -->
+  <symbol id="brand" viewBox="0 0 24 24">
+    <circle cx="9.2" cy="12" r="7.1" fill="#b45309"/>
+    <circle cx="14.8" cy="12" r="7.1" fill="#26211b"/>
+    <circle cx="14.8" cy="12" r="7.1" fill="#1b0b01" clip-path="url(#bm-overlap)"/>
+    <circle cx="12" cy="12" r="1.55" fill="#fdfbf7"/>
+  </symbol>
+
+  <!-- 单色版（跟随 currentColor，靠透明度分层） -->
+  <symbol id="brand-mono" viewBox="0 0 24 24">
+    <circle cx="9.2" cy="12" r="7.1" fill="currentColor" opacity=".55"/>
+    <circle cx="14.8" cy="12" r="7.1" fill="currentColor" opacity=".85"/>
+    <circle cx="14.8" cy="12" r="7.1" fill="currentColor" clip-path="url(#bm-overlap)"/>
+    <circle cx="12" cy="12" r="1.55" fill="#fdfbf7"/>
+  </symbol>
+
+  <!-- 反白版（置于实心橘底之上） -->
+  <symbol id="brand-paper" viewBox="0 0 24 24">
+    <circle cx="9.2" cy="12" r="7.1" fill="#fdfbf7"/>
+    <circle cx="14.8" cy="12" r="7.1" fill="#fdfbf7"/>
+    <circle cx="14.8" cy="12" r="7.1" fill="#fdfbf7" clip-path="url(#bm-overlap)"/>
+    <circle cx="12" cy="12" r="1.55" fill="#b45309"/>
+  </symbol>
+</svg>

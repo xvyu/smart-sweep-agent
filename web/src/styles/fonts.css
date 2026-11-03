@@ -1,0 +1,92 @@
+/* ==========================================================================
+   智扫通 · 字体（Fontshare 自托管）
+   --------------------------------------------------------------------------
+   来源：https://fontshare.com （Indian Type Foundry 出品，免费商用）
+   选型依据（方案 B 暖色杂志）：
+     - Clash Display  标题/品牌字 —— 高对比展示体，杂志封面感
+     - Zodiak         正文衬线 —— 长文阅读，客服回答的主字体
+     - Satoshi        UI 无衬线 —— 导航、标签、按钮
+     - Synonym        等宽 —— 工具名、参数、数字（替换原 JetBrains Mono）
+   中文兜底：
+     - Noto Serif SC / 宋体系  衬线正文
+     - Microsoft YaHei / PingFang  无衬线 UI
+   全部为本地 woff2，不依赖外网 CDN。
+   ========================================================================== */
+
+/* ---------- Clash Display（标题） ---------- */
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/ClashDisplay-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/ClashDisplay-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/ClashDisplay-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/ClashDisplay-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Zodiak（正文衬线） ---------- */
+@font-face {
+  font-family: 'Zodiak';
+  src: url('/fonts/Zodiak-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Satoshi（UI 无衬线） ---------- */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Synonym（等宽） ---------- */
+@font-face {
+  font-family: 'Synonym';
+  src: url('/fonts/Synonym-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Synonym';
+  src: url('/fonts/Synonym-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

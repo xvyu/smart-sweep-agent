@@ -1,0 +1,45 @@
+from .path_tool import get_abs_path
+from .config_handler import prompt_conf
+from .logger_handler import logger
+
+def system_prompt():
+    try:
+        system_prompt_path = get_abs_path(prompt_conf["main_prompt_path"])
+    except KeyError as e:
+        logger.error(f"[load_system_prompts]在yaml配置中没有main_prompt_path配置项")
+        raise e
+
+    try:
+        return open(system_prompt_path, "r", encoding="utf-8").read()
+    except Exception as e:
+        logger.error(f"[load_system_prompts]解析系统提示词出错, {str(e)}")
+        raise e
+
+def rag_summarize_prompt():
+    try:
+        rag_summarize_prompt_path = get_abs_path(prompt_conf["rag_summarize_prompt_path"])
+    except KeyError as e:
+        logger.error(f"[load_rag_summarize_prompts]在yaml配置中没有rag_summarize_prompt_path配置项")
+        raise e
+
+    try:
+        return open(rag_summarize_prompt_path, "r", encoding="utf-8").read()
+    except Exception as e:
+        logger.error(f"[load_rag_summarize_prompts]解析RAG提示词出错, {str(e)}")
+        raise e
+
+def report_prompt():
+    try:
+        report_prompt_path = get_abs_path(prompt_conf["report_prompt_path"])
+    except KeyError as e:
+        logger.error(f"[load_report_prompts]在yaml配置中没有report_prompt_path配置项")
+        raise e
+
+    try:
+        return open(report_prompt_path, "r", encoding="utf-8").read()
+    except Exception as e:
+        logger.error(f"[load_report_prompts]解析报告提示词出错, {str(e)}")
+        raise e
+
+if __name__ == '__main__':
+    print(system_prompt())

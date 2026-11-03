@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <!-- 智扫通 · 品牌标识（方案 G 套色叠印）
+       两圆错位叠印，交叠区压出第三色（#b45309 × #26211b multiply = #1b0b01）。
+       叠印区用 clipPath 显式绘制，不依赖 mix-blend-mode，
+       以保证在 favicon 光栅器与旧版 Safari 下表现一致。 -->
+  <defs>
+    <clipPath id="c">
+      <circle cx="9.2" cy="12" r="7.1"/>
+    </clipPath>
+  </defs>
+  <circle cx="9.2" cy="12" r="7.1" fill="#b45309"/>
+  <circle cx="14.8" cy="12" r="7.1" fill="#26211b"/>
+  <circle cx="14.8" cy="12" r="7.1" fill="#1b0b01" clip-path="url(#c)"/>
+  <circle cx="12" cy="12" r="1.55" fill="#fdfbf7"/>
+</svg>

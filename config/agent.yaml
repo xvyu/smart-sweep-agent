@@ -1,0 +1,7 @@
+external_data_path : data/external/records.csv
+
+weather:
+  base_url: https://restapi.amap.com/v3
+  timeout: 5
+  default_city: 深圳
+  cache_ttl: 600
